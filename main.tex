@@ -112,7 +112,7 @@
 Assignment 1
 %	}
 }
-\author{ EE22BTECH11053-Tanmay Vishwasrao% <-this % stops a space
+\author{ EE22BTECH11053 - Tanmay Vishwasrao% <-this % stops a space
 	
 }	
 
@@ -127,7 +127,7 @@ Assignment 1
 \renewcommand{\thefigure}{\theenumi}
 \renewcommand{\thetable}{\theenumi}
 Question 1.5.9\\
-Find the other points of contact $\vec{E_3}$ and $\vec{F_3}$.
+Find the other points of contact $\vec{E}_3$ and $\vec{F}_3$.
 
 Solution\\
 From the previous references we have the value of Incentre $\vec{I}$ is
@@ -135,74 +135,66 @@ From the previous references we have the value of Incentre $\vec{I}$ is
 \vec{I} &=\myvec{-1.4775\\-0.7949}
 \end{align}
 And the value of inradius $r$ is 1.8969.\\
-The parametric equation of line $AB$ is:
+The parametric equation of line $\vec{A}\vec{B}$ is:
 \begin{align}
-\vec{A}+k(\vec{A-B})
+&= \vec{A}+k(\vec{A-B})\\
+&= \vec{A}+k\vec{m}
 \end{align}
-Now for the point $E_3$ let the value of $k$ be $k_1$. 
+The equation of Incircle is given by:
 \begin{align}
-\vec{E_3} &=\vec{A}+k_1(\vec{A-B})
+\norm{\vec{x}-\vec{I}}^2 &= r^2
 \end{align}
+Since its a parametric equation we can substitute $(3)$ as $\vec{x}$ in $(4)$.
 \begin{align}
-||\vec{x}-\vec{I}||^2 &= r^2
-\end{align}
-Since its a parametric equation we can substitute $(3)$ in $(4)$ as $\vec{E_3}$ will also lie on the incirlce.
-\begin{align}
-||\vec{A}+k_1(\vec{A}-\vec{B})-\vec{I}||^2 &= r^2
+\norm{\vec{A}+k\vec{m}-\vec{I}}^2 &= r^2
 \end{align}
 \begin{align}
-(\vec{A}+k_1(\vec{A}-\vec{B})-\vec{I})^\tau \cdot (\vec{A}+k_1(\vec{A}-\vec{B})-\vec{I}) &= r^2
+(\vec{A}+k\vec{m}-\vec{I})^\tau \cdot (\vec{A}+k\vec{m}-\vec{I}) &= r^2
 \end{align}
 On simplifying the above equation:
 \begin{align}
-k_1^2||\vec{A-B}||^2+2k_1(\vec{A-B})^\tau(\vec{A-I})+||\vec{I}||^2 \nonumber \\
-+||\vec{A}||^2-2(\vec{A}^\tau\vec{I})-r^2 &= 0
+k^2\norm{\vec{m}}^2+2k(\vec{m})^\tau \cdot (\vec{A-I})+\norm{\vec{I}}^2 \nonumber \\
++\norm{\vec{A}}^2-2(\vec{A}^\tau \cdot \vec{I})-r^2 &= 0
 \end{align}
-On putting the values $\vec{A}, \vec{B}, \vec{I}$ in the above equation:
+The discriminant of the above quadratic equation is $0$. So solution of the equation is $-b/2a$.
 \begin{align}
-74k_1^2+2k_1(13.8231)+2.81513+2 \nonumber \\
--2(-0.6826)-3.5982 &= 0
+\therefore k &= -\frac{\vec{m}^\tau \cdot (\vec{A-I})}{2\norm{\vec{m}}^2}
 \end{align}
+Now the equation of $\vec{E}_3$ wil be
 \begin{align}
-74k_1^2+27.6463k_1+2.5821 &= 0
+\vec{E}_3 &=\vec{A}+k(\vec{m})
 \end{align}
-Solving the quadratic equation for $k_1$.The value of $k_1$ comes out to be $-0.1867$.
-Now we can find $E_3$ using the above results:
+where $\vec{m} = \vec{A}-\vec{B}$ \\
+Now putting the values of $\vec{A}, \vec{m}, \vec{I}$
 \begin{align}
-\vec{E_3} &=\myvec{1\\-1}-0.1867\myvec{5\\-7}
-\end{align}
-Therefore, the point $E_3$ is
-\begin{align}
-\vec{E_3} &=\myvec{0.066\\0.307}
-\end{align}
-Similarily, we will find the point $\vec{F_3}$. For the point $\vec{F_3}$ let the value of $k$ be $k_2$. 
-\begin{align}
-\vec{F_3} &=\vec{A}+k_2(\vec{A-C})
-\end{align}
-Substituting $(12)$ as $\vec{x}$ in $(4)$.
-\begin{align}
-||\vec{A}+k_2(\vec{A}-\vec{C})-\vec{I}||^2 &= r^2
+\therefore k &= -\frac{27.6463}{148}
 \end{align}
 \begin{align}
-k_2^2||\vec{A-C}||^2+2k_2(\vec{A-C})^\tau(\vec{A-I})+||\vec{I}||^2 \nonumber \\
-+||\vec{A}||^2-2(\vec{A}^\tau\vec{I})-r^2 &= 0
+k &= -0.1867
 \end{align}
-On putting the values $\vec{A}, \vec{C}, \vec{I}$ in the above equation:
+Now we can find $\vec{E}_3$ using above results:
 \begin{align}
-74k_2^2+2k_2(13.8231)+2.81513+2 \nonumber \\
--2(-0.6826)-3.5982 &= 0
+\vec{E}_3 &=\myvec{1\\-1}-0.1867\myvec{5\\-7}
 \end{align}
 \begin{align}
-32k_2^2+18.1801k_2+2.5821 &= 0
+\vec{E}_3 &=\myvec{0.066\\0.307}
 \end{align}
-The value of $k_2$ comes out to be $-0.2840$.
-Now we can find $\vec{F_3}$ using the above results:
+Similarily, we will find the point $\vec{F}_3$. For the point $\vec{F}_3$ the value of $\vec{m} = \vec{A}-\vec{C}$. 
 \begin{align}
-\vec{F_3} &=\myvec{1\\-1}-0.2840\myvec{4\\4}
+\vec{F}_3 &=\vec{A}+k(\vec{m})
 \end{align}
-Therefore, the point $\vec{F_3}$ is
+Using equation $(8)$ we can find the value of $k$. 
 \begin{align}
-\vec{F_3} &=\myvec{-0.136\\-2.136}
+\therefore k &= -\frac{18.1801}{64}
+\end{align}
+\begin{align}
+k &= -0.2840
+\end{align}
+Now we can find $\vec{F}_3$ using above results:
+\begin{align}
+\vec{F}_3 &=\myvec{1\\-1}-0.2840\myvec{4\\4}
+\end{align}
+\begin{align}
+\vec{F}_3 &= \myvec{-0.136\\-2.136}
 \end{align}
 \end{document}
-
