@@ -126,74 +126,83 @@ Assignment 1
 
 \renewcommand{\thefigure}{\theenumi}
 \renewcommand{\thetable}{\theenumi}
-\textbf{Question 1.5.9}
+Question 1.5.9\\
+Find the other points of contact $\vec{E_3}$ and $\vec{F_3}$.
 
-Find the other points of contact $\vec{E_3}$ and $\vec{F_3}$.\\
-
-\textbf{Solution} 
-
+Solution\\
 From the previous references we have the value of Incentre $\vec{I}$ is
 \begin{align}
-\vec{I}=\myvec{-1.4775\\-0.7949}
+\vec{I} &=\myvec{-1.4775\\-0.7949}
 \end{align}
+And the value of inradius $r$ is 1.8969.\\
 The parametric equation of line $AB$ is:
 \begin{align}
 \vec{A}+k(\vec{A-B})
 \end{align}
 Now for the point $E_3$ let the value of $k$ be $k_1$. 
 \begin{align}
-\vec{E_3}=\vec{A}+k_1(\vec{A-B})
-\end{align}
-Since the line $AB$ and $IE_3$ are perpendicular to each other the dot product of the two lines will be 0.
-\begin{align}
-(\vec{I-E_3})\cdot(\vec{A-B})=0\\
-\vec{I}\cdot\vec{A}-\vec{I}\cdot\vec{B}-\vec{E_3}\cdot\vec{A}+\vec{E_3}\cdot\vec{A}=0
-\end{align}
-Substituting the value of $E_3$ in the above equation and solving it:
-\begin{align}
-\vec{I}\cdot\vec{A}-\vec{I}\cdot\vec{B}-(\vec{A}+k_1(\vec{A-B}))\cdot\vec{A}+(\vec{A}+k_1(\vec{A-B}))\cdot\vec{A} &= 0 
+\vec{E_3} &=\vec{A}+k_1(\vec{A-B})
 \end{align}
 \begin{align}
-k_1(\vec{A-B})\cdot(\vec{A-B}) &= (\vec{I-A})\cdot(\vec{A-B})
+||\vec{x}-\vec{I}||^2 &= r^2
+\end{align}
+Since its a parametric equation we can substitute $(3)$ in $(4)$ as $\vec{E_3}$ will also lie on the incirlce.
+\begin{align}
+||\vec{A}+k_1(\vec{A}-\vec{B})-\vec{I}||^2 &= r^2
 \end{align}
 \begin{align}
-k_1=\frac{(\vec{I-A})\cdot(\vec{A-B})}{(\vec{A-B})\cdot(\vec{A-B})}
+(\vec{A}+k_1(\vec{A}-\vec{B})-\vec{I})^\tau \cdot (\vec{A}+k_1(\vec{A}-\vec{B})-\vec{I}) &= r^2
 \end{align}
-The value of $k_1$ comes out to be $-0.1867$.
+On simplifying the above equation:
+\begin{align}
+k_1^2||\vec{A-B}||^2+2k_1(\vec{A-B})^\tau(\vec{A-I})+||\vec{I}||^2 \nonumber \\
++||\vec{A}||^2-2(\vec{A}^\tau\vec{I})-r^2 &= 0
+\end{align}
+On putting the values $\vec{A}, \vec{B}, \vec{I}$ in the above equation:
+\begin{align}
+74k_1^2+2k_1(13.8231)+2.81513+2 \nonumber \\
+-2(-0.6826)-3.5982 &= 0
+\end{align}
+\begin{align}
+74k_1^2+27.6463k_1+2.5821 &= 0
+\end{align}
+Solving the quadratic equation for $k_1$.The value of $k_1$ comes out to be $-0.1867$.
 Now we can find $E_3$ using the above results:
 \begin{align}
-\vec{E_3}=\myvec{1\\-1}-0.1867\myvec{5\\-7}
+\vec{E_3} &=\myvec{1\\-1}-0.1867\myvec{5\\-7}
 \end{align}
 Therefore, the point $E_3$ is
 \begin{align}
-\vec{E_3}=\myvec{0.066\\0.307}
+\vec{E_3} &=\myvec{0.066\\0.307}
 \end{align}
 Similarily, we will find the point $\vec{F_3}$. For the point $\vec{F_3}$ let the value of $k$ be $k_2$. 
 \begin{align}
-\vec{F_3}=\vec{A}+k_2(\vec{A-C})
+\vec{F_3} &=\vec{A}+k_2(\vec{A-C})
+\end{align}
+Substituting $(12)$ as $\vec{x}$ in $(4)$.
+\begin{align}
+||\vec{A}+k_2(\vec{A}-\vec{C})-\vec{I}||^2 &= r^2
 \end{align}
 \begin{align}
-(\vec{I-F_3})\cdot(\vec{A-C})=0\\
-\vec{I}\cdot\vec{A}-\vec{I}\cdot\vec{C}-\vec{F_3}\cdot\vec{A}+\vec{F_3}\cdot\vec{A}=0
+k_2^2||\vec{A-C}||^2+2k_2(\vec{A-C})^\tau(\vec{A-I})+||\vec{I}||^2 \nonumber \\
++||\vec{A}||^2-2(\vec{A}^\tau\vec{I})-r^2 &= 0
 \end{align}
-Substituting the value of $\vec{F_3}$ in the above equation and solving it:
+On putting the values $\vec{A}, \vec{C}, \vec{I}$ in the above equation:
 \begin{align}
-\vec{I}\cdot\vec{A}-\vec{I}\cdot\vec{C}-(\vec{A}+k_2(\vec{A-C}))\cdot\vec{A}+(\vec{A}+k_2(\vec{A-C}))\cdot\vec{A}=0 
-\end{align}
-\begin{align}
-k_2=(\vec{A-C})\cdot(\vec{A-C})=(\vec{I-A})\cdot(\vec{A-C})
+74k_2^2+2k_2(13.8231)+2.81513+2 \nonumber \\
+-2(-0.6826)-3.5982 &= 0
 \end{align}
 \begin{align}
-k_2=\frac{(\vec{I-A})\cdot(\vec{A-C})}{(\vec{A-C})\cdot(\vec{A-C})}
+32k_2^2+18.1801k_2+2.5821 &= 0
 \end{align}
-The value of $k_2$ comes out to be $--0.2840$.
+The value of $k_2$ comes out to be $-0.2840$.
 Now we can find $\vec{F_3}$ using the above results:
 \begin{align}
-\vec{F_3}=\myvec{1\\-1}-0.2840\myvec{4\\4}
+\vec{F_3} &=\myvec{1\\-1}-0.2840\myvec{4\\4}
 \end{align}
 Therefore, the point $\vec{F_3}$ is
 \begin{align}
-\vec{F_3}=\myvec{-0.136\\-2.136}
+\vec{F_3} &=\myvec{-0.136\\-2.136}
 \end{align}
 \end{document}
 
