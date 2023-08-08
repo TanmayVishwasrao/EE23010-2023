@@ -130,7 +130,7 @@ Assignment 1
 Question 1.5.9\\
 Find the other points of contact $\vec{E}_3$ and $\vec{F}_3$.
 
-Solution\\
+\solution\\
 From the previous references we have the value of Incentre $\vec{I}$ is
 \begin{align}
 \vec{I} &=\myvec{-1.4775\\-0.7949}
@@ -149,12 +149,12 @@ Since its a parametric equation we can substitute $(3)$ as $\vec{x}$ in $(4)$.
 \norm{\vec{A}+k\vec{m}-\vec{I}}^2 &= r^2
 \end{align}
 \begin{align}
-(\vec{A}+k\vec{m}-\vec{I})^\tau(\vec{A}+k\vec{m}-\vec{I}) &= r^2
+(\vec{A}+k\vec{m}-\vec{I})^\top(\vec{A}+k\vec{m}-\vec{I}) &= r^2
 \end{align}
 On simplifying the above equation:
 \begin{align}
-k^2\norm{\vec{m}}^2+2k(\vec{m})^\tau(\vec{A-I})+\norm{\vec{I}}^2 \nonumber \\
-+\norm{\vec{A}}^2-2(\vec{A}^\tau\vec{I})-r^2 &= 0
+k^2\norm{\vec{m}}^2+2k(\vec{m})^\top(\vec{A-I})+\norm{\vec{I}}^2 \nonumber \\
++\norm{\vec{A}}^2-2(\vec{A}^\top\vec{I})-r^2 &= 0
 \end{align}
 \begin{enumerate}
 \item Finding the point $\vec{E}_3$.\\
@@ -173,7 +173,10 @@ D &= (27.6463)^2-4(74)(2.5821)\\
 D &= 764.3179-764.3179\\
 D &= 0
 \end{align}
-Since the discriminant is $0$. The value of k will be $-b/2a$.
+Since the discriminant is $0$. The value of k will be:
+\begin{align}
+k &= -\frac{2(\vec{m})^\top(\vec{A-I})}{2\norm{\vec{m}}^2}
+\end{align}.
 \begin{align}
 \therefore k &= -\frac{27.6463}{148}
 \end{align}
@@ -202,8 +205,10 @@ D &= (18.1801)^2-4(32)(2.5821)\\
 D &= 330.51-330.51\\
 D &= 0
 \end{align}
-Since the discriminant is $0$. The value of k will be $-b/2a$.
-Using equation $(8)$ we can find the value of $k$. 
+Since the discriminant is $0$. The value of k will be:
+\begin{align}
+k &= -\frac{2(\vec{m})^\top(\vec{A-I})}{2\norm{\vec{m}}^2}
+\end{align}
 \begin{align}
 \therefore k &= -\frac{18.1801}{64}
 \end{align}
