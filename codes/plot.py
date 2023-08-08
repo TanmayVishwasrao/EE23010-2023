@@ -9,23 +9,9 @@ C=np.array([-3,-5])
 a=np.linalg.norm(C-B)
 b=np.linalg.norm(C-A)
 c=np.linalg.norm(A-B)
-#Incentre
-I=np.array([(a*A[0]+b*B[0]+c*C[0])/(a+b+c),(a*A[1]+b*B[1]+c*C[1])/(a+b+c)])
-print("I = ",I)
-#finding k for E_3 and F_3
-k1=((I-A)@(A-B))/((A-B)@(A-B))
-k2=((I-A)@(A-C))/((A-C)@(A-C))
-#finding E_3 and F_3
-E3=A+(k1*(A-B))
-F3=A+(k2*(A-C))
-print("k1 = ",k1)
-print("k2 = ",k2)
-print("E3 = ",E3)
-print("F3 = ",F3)
 
 #Orthogonal matrix
 omat = np.array([[0,1],[-1,0]]) 
-
 
 #Triangle vertices
 def tri_vert(a,b,c):
@@ -69,7 +55,6 @@ def icircle(A,B,C):
   N=np.vstack((n1-k1*n2,n2-k2*n3))
   I=np.matmul(np.linalg.inv(N),p)
   r = n1@(I-B)
-  #Intersection
   return I,r
   
 def circ_gen(O,r):
@@ -80,7 +65,6 @@ def circ_gen(O,r):
 	x_circ[1,:] = r*np.sin(theta)
 	x_circ = (x_circ.T + O).T
 	return x_circ      
-
 
 #Generating all lines
 x_AB = line_gen(A,B)
@@ -126,3 +110,30 @@ plt.legend(loc='best')
 plt.grid() # minor
 plt.axis('equal')
 plt.savefig("Incentre.png",bbox_inches='tight')
+
+
+#Incentre
+k1 = 1
+k2 = 1
+p = np.zeros(2)
+t = norm_vec(B,C)
+n1 = t/np.linalg.norm(t)
+t = norm_vec(C,A)
+n2 = t/np.linalg.norm(t)
+t = norm_vec(A,B)
+n3 = t/np.linalg.norm(t)
+p[0] = n1@B- k1*n2@C
+p[1] = n2@C- k2*n3@A
+N=np.vstack((n1-k1*n2,n2-k2*n3))
+I=np.matmul(np.linalg.inv(N),p)
+print("I = ",I)
+#finding k for E_3 and F_3
+k1=((I-A)@(A-B))/((A-B)@(A-B))
+k2=((I-A)@(A-C))/((A-C)@(A-C))
+#finding E_3 and F_3
+E3=A+(k1*(A-B))
+F3=A+(k2*(A-C))
+print("k1 = ",k1)
+print("k2 = ",k2)
+print("E3 = ",E3)
+print("F3 = ",F3)
