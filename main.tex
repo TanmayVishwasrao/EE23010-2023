@@ -135,9 +135,8 @@ From the previous references we have the value of Incentre $\vec{I}$ is
 \vec{I} &=\myvec{-1.4775\\-0.7949}
 \end{align}
 And the value of inradius $r$ is 1.8969.\\
-The parametric equation of line $\vec{A}\vec{B}$ is:
+The parametric equation of line is:
 \begin{align}
-&= \vec{A}+k(\vec{A-B})\\
 &= \vec{A}+k\vec{m}
 \end{align}
 The equation of Incircle is given by:
@@ -149,23 +148,31 @@ Since its a parametric equation we can substitute $(3)$ as $\vec{x}$ in $(4)$.
 \norm{\vec{A}+k\vec{m}-\vec{I}}^2 &= r^2
 \end{align}
 \begin{align}
-(\vec{A}+k\vec{m}-\vec{I})^\tau \cdot (\vec{A}+k\vec{m}-\vec{I}) &= r^2
+(\vec{A}+k\vec{m}-\vec{I})^\tau(\vec{A}+k\vec{m}-\vec{I}) &= r^2
 \end{align}
 On simplifying the above equation:
 \begin{align}
-k^2\norm{\vec{m}}^2+2k(\vec{m})^\tau \cdot (\vec{A-I})+\norm{\vec{I}}^2 \nonumber \\
-+\norm{\vec{A}}^2-2(\vec{A}^\tau \cdot \vec{I})-r^2 &= 0
+k^2\norm{\vec{m}}^2+2k(\vec{m})^\tau(\vec{A-I})+\norm{\vec{I}}^2 \nonumber \\
++\norm{\vec{A}}^2-2(\vec{A}^\tau\vec{I})-r^2 &= 0
 \end{align}
-The discriminant of the above quadratic equation is $0$. So solution of the equation is $-b/2a$.
-\begin{align}
-\therefore k &= -\frac{\vec{m}^\tau \cdot (\vec{A-I})}{2\norm{\vec{m}}^2}
-\end{align}
-Now the equation of $\vec{E}_3$ wil be
+\begin{enumerate}
+\item Finding the point $\vec{E}_3$.\\
+The equation of $\vec{E}_3$:
 \begin{align}
 \vec{E}_3 &=\vec{A}+k(\vec{m})
 \end{align}
 where $\vec{m} = \vec{A}-\vec{B}$ \\
-Now putting the values of $\vec{A}, \vec{m}, \vec{I}$
+Now putting the values of $\vec{A}, \vec{m}, \vec{I}$ in eq. $(7)$
+\begin{align}
+74k^2+27.6463k+2.5821 &= 0
+\end{align}
+Discriminant of the above equation is:
+\begin{align}
+D &= (27.6463)^2-4(74)(2.5821)\\
+D &= 764.3179-764.3179\\
+D &= 0
+\end{align}
+Since the discriminant is $0$. The value of k will be $-b/2a$.
 \begin{align}
 \therefore k &= -\frac{27.6463}{148}
 \end{align}
@@ -179,10 +186,22 @@ Now we can find $\vec{E}_3$ using above results:
 \begin{align}
 \vec{E}_3 &=\myvec{0.066\\0.307}
 \end{align}
-Similarily, we will find the point $\vec{F}_3$. For the point $\vec{F}_3$ the value of $\vec{m} = \vec{A}-\vec{C}$. 
+\item Finding the point $\vec{F}_3$.\\
+For the point $\vec{F}_3$ the value of $\vec{m} = \vec{A}-\vec{C}$. 
 \begin{align}
 \vec{F}_3 &=\vec{A}+k(\vec{m})
 \end{align}
+Now putting the values of $\vec{A}, \vec{m}, \vec{I}$ in eq. $(7)$
+\begin{align}
+32k^2+18.1801k+2.5821 &= 0
+\end{align}
+Discriminant of the above equation is:
+\begin{align}
+D &= (18.1801)^2-4(32)(2.5821)\\
+D &= 330.51-330.51\\
+D &= 0
+\end{align}
+Since the discriminant is $0$. The value of k will be $-b/2a$.
 Using equation $(8)$ we can find the value of $k$. 
 \begin{align}
 \therefore k &= -\frac{18.1801}{64}
@@ -197,4 +216,10 @@ Now we can find $\vec{F}_3$ using above results:
 \begin{align}
 \vec{F}_3 &= \myvec{-0.136\\-2.136}
 \end{align}
+\end{enumerate}
+\begin{figure}
+\includegraphics[width=\columnwidth]{figs/Incentre.png}
+\caption{Points $\vec{E}_3$ and $\vec{F}_3$ plotted using python}
+\label{fig:i_tri_py}
+\end{figure}
 \end{document}
