@@ -13,6 +13,7 @@
 \usepackage[breaklinks=true]{hyperref}
 \usepackage{tkz-euclide} % loads  TikZ and tkz-base
 \usepackage{listings}
+\usepackage{floatrow}  
 
 
 \newtheorem{theorem}{Theorem}[section]
@@ -217,7 +218,7 @@ Now we can find $\vec{F}_3$ using above results:
 \vec{F}_3 &= \myvec{-0.136\\-2.136}
 \end{align}
 \end{enumerate}
-\begin{figure}
+\begin{figure}[H]
 \includegraphics[width=\columnwidth]{figs/Incentre.png}
 \caption{Points $\vec{E}_3$ and $\vec{F}_3$ plotted using python}
 \label{fig:i_tri_py}
