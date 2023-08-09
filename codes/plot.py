@@ -39,7 +39,30 @@ def line_gen(A,B):
     temp1 = A + lam_1[i]*(B-A)
     x_AB[:,i]= temp1.T
   return x_AB
-    
+
+#finding Incentre 
+t = norm_vec(B,C) 
+n1 = t/np.linalg.norm(t) #unit normal vector
+t = norm_vec(C,A)
+n2 = t/np.linalg.norm(t)
+t = norm_vec(A,B)
+n3 = t/np.linalg.norm(t)
+
+#Intersection of two lines
+def line_intersect(n1,A1,n2,A2):
+  N=np.block([[n1],[n2]])
+  p = np.zeros(2)
+  p[0] = n1@A1
+  p[1] = n2@A2
+  #Intersection
+  P=np.linalg.inv(N)@p
+  return P
+
+I=line_intersect(n1-n3,B,n1-n2,C)  #Incentre
+#Incentre
+print("I = ",I)
+
+
 def icircle(A,B,C):
   k1 = 1
   k2 = 1
@@ -52,10 +75,8 @@ def icircle(A,B,C):
   n3 = t/np.linalg.norm(t)
   p[0] = n1@B- k1*n2@C
   p[1] = n2@C- k2*n3@A
-  N=np.vstack((n1-k1*n2,n2-k2*n3))
-  I=np.matmul(np.linalg.inv(N),p)
   r = n1@(I-B)
-  return I,r
+  return r
   
 def circ_gen(O,r):
 	len = 50
@@ -72,7 +93,7 @@ x_BC = line_gen(B,C)
 x_CA = line_gen(C,A)
 
 #Generating the incircle
-[I,r] = icircle(A,B,C)
+r = icircle(A,B,C)
 x_icirc= circ_gen(I,r)
 
 #Plotting all lines
@@ -80,9 +101,19 @@ plt.plot(x_AB[0,:],x_AB[1,:],label='$AB$')
 plt.plot(x_BC[0,:],x_BC[1,:],label='$BC$')
 plt.plot(x_CA[0,:],x_CA[1,:],label='$CA$')
 plt.plot(x_icirc[0,:],x_icirc[1,:],label='$incircle$')
+
+#finding k for E_3 and F_3
+k1=((I-A)@(A-B))/((A-B)@(A-B))
+k2=((I-A)@(A-C))/((A-C)@(A-C))
+#finding E_3 and F_3
+E3=A+(k1*(A-B))
+F3=A+(k2*(A-C))
+print("k1 = ",k1)
+print("k2 = ",k2)
+print("E3 = ",E3)
+print("F3 = ",F3)
+
 #Labeling the coordinates
-#tri_coords = np.vstack((A,B,C,O,I)).T
-#np.block([[A1,A2,B1,B2]])
 A = A.reshape(-1,1)
 B = B.reshape(-1,1)
 C = C.reshape(-1,1)
@@ -102,38 +133,9 @@ for i, txt in enumerate(vert_labels):
 plt.xlabel('$x$')
 plt.ylabel('$y$')
 plt.legend(loc='best')
-plt.grid() # minor
-plt.axis('equal')
-
-                 
-plt.legend(loc='best')
-plt.grid() # minor
+plt.grid(True) # minor
 plt.axis('equal')
 plt.savefig("Incentre.png",bbox_inches='tight')
 
 
-#Incentre
-k1 = 1
-k2 = 1
-p = np.zeros(2)
-t = norm_vec(B,C)
-n1 = t/np.linalg.norm(t)
-t = norm_vec(C,A)
-n2 = t/np.linalg.norm(t)
-t = norm_vec(A,B)
-n3 = t/np.linalg.norm(t)
-p[0] = n1@B- k1*n2@C
-p[1] = n2@C- k2*n3@A
-N=np.vstack((n1-k1*n2,n2-k2*n3))
-I=np.matmul(np.linalg.inv(N),p)
-print("I = ",I)
-#finding k for E_3 and F_3
-k1=((I-A)@(A-B))/((A-B)@(A-B))
-k2=((I-A)@(A-C))/((A-C)@(A-C))
-#finding E_3 and F_3
-E3=A+(k1*(A-B))
-F3=A+(k2*(A-C))
-print("k1 = ",k1)
-print("k2 = ",k2)
-print("E3 = ",E3)
-print("F3 = ",F3)
+
