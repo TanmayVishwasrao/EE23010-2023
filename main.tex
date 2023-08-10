@@ -146,67 +146,70 @@ The equation of Incircle is given by:
 Since its a parametric equation we can substitute $(3)$ as $\vec{x}$ in $(4)$.
 \begin{align}
 \norm{\vec{A}+k\vec{m}-\vec{I}}^2 &= r^2 \\
-(\vec{A}+k\vec{m}-\vec{I})^\top(\vec{A}+k\vec{m}-\vec{I}) &= r^2
+\brak{\vec{A}+k\vec{m}-\vec{I}}^\top\brak{\vec{A}+k\vec{m}-\vec{I}} &= r^2
 \end{align}
 On simplifying the above equation:
 \begin{align}
-k^2\norm{\vec{m}}^2+2k(\vec{m})^\top(\vec{A-I})+\norm{\vec{I}}^2 \nonumber \\
-+\norm{\vec{A}}^2-2(\vec{A}^\top\vec{I})-r^2 &= 0
+k^2\norm{\vec{m}}^2+2k\brak{\vec{m}}^\top\brak{\vec{A-I}}+\norm{\vec{I}}^2 \nonumber \\
++\norm{\vec{A}}^2-2\brak{\vec{A}^\top\vec{I}}-r^2 &= 0
 \label{eq:equation}
 \end{align}
 \begin{enumerate}
 \item Finding the point $\vec{E}_3$.\\
 The equation of $\vec{E}_3$:
 \begin{align}
-\vec{E}_3 &=\vec{A}+k(\vec{m})
+\vec{E}_3 &=\vec{A}+k\vec{m}
 \end{align}
-where $\vec{m} = \vec{A}-\vec{B}$ \\
-Now putting the values of $\vec{A}, \vec{m}, \vec{I}$ in eq. \eqref{eq:equation}.
+Where 
+\begin{align}
+\vec{m} = \vec{A}-\vec{B}
+\end{align}
+Now putting the values of $\vec{A}, \vec{m}, \vec{I}$ in \eqref{eq:equation}.
 \begin{align}
 74k^2+27.6463k+2.5821 &= 0
 \end{align}
 Discriminant of the above equation is:
 \begin{align}
-D &= (27.6463)^2-4(74)(2.5821)\\
+D &= \brak{27.6463}^2-4\brak{74}\brak{2.5821}\\
 &= 764.3179-764.3179\\
 &= 0
 \end{align}
 Since the discriminant is $0$. The value of k will be:
 \begin{align}
-k &= -\frac{2(\vec{m})^\top(\vec{A-I})}{2\norm{\vec{m}}^2} \\
-k &= -\frac{27.6463}{148} \\
-k &= -0.1867
+k &= -\frac{2\brak{\vec{m}}^\top\brak{\vec{A-I}}}{2\norm{\vec{m}}^2} \\
+&= -\frac{27.6463}{148} \\
+&= -0.1867
 \end{align}
 Now we can find $\vec{E}_3$ using above results:
 \begin{align}
 \vec{E}_3 &=\myvec{1\\-1}-0.1867\myvec{5\\-7} \\
-\vec{E}_3 &=\myvec{0.066\\0.307}
+&=\myvec{0.066\\0.307}
 \end{align}
 \item Finding the point $\vec{F}_3$.\\
 For the point $\vec{F}_3$ the value of $\vec{m} = \vec{A}-\vec{C}$. 
 \begin{align}
-\vec{F}_3 &=\vec{A}+k(\vec{m})
+\vec{F}_3 &=\vec{A}+k\vec{m}
 \end{align}
-Now putting the values of $\vec{A}, \vec{m}, \vec{I}$ in eq. \eqref{eq:equation}.
+Now putting the values of $\vec{A}, \vec{m}, \vec{I}$ in \eqref{eq:equation}.
 \begin{align}
 32k^2+18.1801k+2.5821 &= 0
 \end{align}
 Discriminant of the above equation is:
 \begin{align}
-D &= (18.1801)^2-4(32)(2.5821)\\
+D &= \brak{18.1801}^2-4\brak{32}\brak{2.5821}\\
 &= 330.51-330.51\\
 &= 0
 \end{align}
 Since the discriminant is $0$. The value of k will be:
 \begin{align}
-k &= -\frac{2(\vec{m})^\top(\vec{A-I})}{2\norm{\vec{m}}^2}\\
-k &= -\frac{18.1801}{64}\\
-k &= -0.2840
+k &= -\frac{2\brak{\vec{m}}^\top\brak{\vec{A-I}}}{2\norm{\vec{m}}^2}\\
+&= -\frac{18.1801}{64}\\
+&= -0.2840
 \end{align}
 Now we can find $\vec{F}_3$ using above results:
 \begin{align}
 \vec{F}_3 &=\myvec{1\\-1}-0.2840\myvec{4\\4}\\
-\vec{F}_3 &= \myvec{-0.136\\-2.136}
+&= \myvec{-0.136\\-2.136}
 \end{align}
 \end{enumerate}
 \begin{figure}[H]
