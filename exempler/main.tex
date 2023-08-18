@@ -1,0 +1,33 @@
+\documentclass{article}
+
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{enumerate}
+
+\begin{document}
+
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\newcommand{\solution}{\noindent \textbf{solution: }}
+
+
+Question 10.13.3.25\\
+A coin is tossed 3 times. List the possible outcomes. Find the probability of getting
+(i) all heads (ii) at least 2 heads 
+
+\solution
+As the coin is tossed 3 times we will get 8 different outcomes.\\
+The list of possble outcomes is {HHH,HHT,HTH,THH,HTT,THT,TTH,TTT}.
+The sample space is $n(S)=8$.
+\begin{enumerate}[(i)]
+	\item{all heads}
+		\begin{align}
+			\pr{\text{all heads}} &= \frac{\text{getting all three as heads}}{\text{number of total outcomes}}\\
+			&= \frac{1}{8}
+		\end{align}
+	\item{at least 2 heads}
+		\begin{align}
+			\pr{\text{atleast 2 heads}} &= \frac{\text{getting 2 or more heads}}{\text{number of total outcome}}\\
+			&= \frac{4}{8}\\
+			&=\frac{1}{2}
+\end{enumerate}
+\end{document}
