@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Audio Player</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Audio Player</h1>
+    <audio id="audio-player" controls>
+        Your browser does not support the audio element.
+    </audio>
+
+    <ul id="playlist" style="display: none;">
+        <script>
+            for (let i = 1; i <= 48; i++) {
+                document.write(`<li><a href="audio/song${i}.mp3">song${i}</a></li>\n`);
+            }
+        </script>
+    </ul>
+
+    <p id="current-song"></p>
+
+    <div class="controls">
+        <button id="prev-button">Previous</button>
+        <button id="next-button">Next</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
